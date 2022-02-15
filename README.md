@@ -22,18 +22,18 @@ Test set: <br>
 
 
 ## WHERE ARE THE FILES?? <br>
-### To jump ahead and save some time, some of the data has been prepared in advance ![https://www.synapse.org/#!Synapse:syn27086925](https://www.synapse.org/#!Synapse:syn27086925)
-#### Tissues trainingset
+### To jump ahead and save some time, some of the data has been prepared in advance. Download this zip file ![https://www.synapse.org/#!Synapse:syn27087655](https://www.synapse.org/#!Synapse:syn27087655)
+#### 1 Tissues trainingset
 -Ground truth annotations have suffix 'Ant' and are in .png format. Size is 256 x 256 px. Classes correspond to pixel values: 1 - background, 2 - nuclei outlines, 3 - nuclei centers, 4 - difficult pixels <br>
 -Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
 -Weight annotations for incurring higher penalty in loss function 'wt' and are in .png format. Size is 256 x 256 px. <br>
 
-#### Artefacts trainingset 
+#### 2 Artefacts trainingset 
 -The ground truth is 33-Ant.tif. This is a 15,000 x 15,000 x 25 voxels 3D image!
 -The image has is 33-Img.tif. This is 15,000 x 15,000 x 25 x 2 voxels 3D image **It has TWO channels just like the tissues trainingset - DAPI and lamin** <br>
 The classes have values: 1 - blobs, 2 - lint, 3 - tile artefacts, 4 - false positives (do not let model classify these as artefacts). All other pixels can be considered as background.
 
-#### Artefacts testset
+#### 3 Artefacts testset
 -Ground truth annotations have suffix 'Ant' and are in .png format. Size is 256 x 256 px. Classes correspond to pixel values: 1 - artefact (background), 2 - nuclei outlines, 3 - nuclei centers,  <br>
 -Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
 
