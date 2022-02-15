@@ -21,22 +21,22 @@ Test set: <br>
 * A small set fluorescence images of nuclei stained with Hoechst with visible artefacts in the same field and corresponding manual annotations
 
 
-## WHAT ARE THE FILES??
-### The ground truth annotations are in .png file extensions. The class index is in the filename:
--class1 - nuclei contours (outlines)
--class2 - nuclei centers on the border. For other nuclei, use an imfill operation.
--class3 - NO CLASS 3. SKIP.
--class4 - background pixels
--class5 - pixels that correspond to areas that models generally find challenging. Nuclei are more dense here. You can use these to add a higher penalty to your loss function to get higher accuracy.
-
-### Images are in .tif file extensions.
--DAPI - corresponding to channel 1 of DAPI-stained nuclei. DAPI stains DNA in cells.
--lamin - corresonding to channel 2 of the same nuclei. Lamin stains the outer membrane in nuclei producing a ring. This is useful in challenging areas for segmentation.
--stack - OPTIONAL. This is the DAPI and lamin channels concatenated into one multipage file.
-
-## Suggested procedure
-1. Set the artefacts folder aside. Use as test set later.
-2. For remaining folders, split into training, validation, test sets of your choosing.
+## WHAT ARE THE FILES?? <br>
+### The ground truth annotations are in .png file extensions. The class index is in the filename: <br>
+-class1 - nuclei contours (outlines) <br>
+-class2 - nuclei centers on the border. For other nuclei, use an imfill operation. <br>
+-class3 - NO CLASS 3. SKIP. <br>
+-class4 - background pixels <br>
+-class5 - pixels that correspond to areas that models generally find challenging. Nuclei are more dense here. You can use these to add a higher penalty to your loss function to get higher accuracy. <br>
+<br>
+### Images are in .tif file extensions.<br>
+-DAPI - corresponding to channel 1 of DAPI-stained nuclei. DAPI stains DNA in cells.<br>
+-lamin - corresonding to channel 2 of the same nuclei. Lamin stains the outer membrane in nuclei producing a ring. This is useful in challenging areas for segmentation.<br>
+-stack - OPTIONAL. This is the DAPI and lamin channels concatenated into one multipage file.<br>
+<br>
+## Suggested procedure<br>
+1. Set the artefacts folder aside. Use as test set later.<br>
+2. For remaining folders, split into training, validation, test sets of your choosing.<br>
 
 ## Compute requirements:
 * GPU: ie 1080GTX, 3070 RTX, etc 
