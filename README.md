@@ -21,15 +21,32 @@ Test set: <br>
 * A small set fluorescence images of nuclei stained with Hoechst with visible artefacts in the same field and corresponding manual annotations
 
 
-## WHAT ARE THE FILES?? <br>
-### The ground truth annotations are in .png file extensions. The class index is in the filename: <br>
+## WHERE ARE THE FILES?? <br>
+### To jump ahead and save some time, some of the data has been prepared in advance ![https://www.synapse.org/#!Synapse:syn27086925](https://www.synapse.org/#!Synapse:syn27086925)
+#### Tissues trainingset
+-Ground truth annotations have suffix 'Ant' and are in .png format. Size is 256 x 256 px. Classes correspond to pixel values: 1 - background, 2 - nuclei outlines, 3 - nuclei centers, 4 - difficult pixels <br>
+-Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
+-Weight annotations for incurring higher penalty in loss function 'wt' and are in .png format. Size is 256 x 256 px. <br>
+
+#### Artefacts trainingset 
+-The ground truth is 33-Ant.tif. This is a 15,000 x 15,000 x 25 voxels 3D image!
+-The image has is 33-Img.tif. This is 15,000 x 15,000 x 25 x 2 voxels 3D image **It has TWO channels just like the tissues trainingset - DAPI and lamin** <br>
+The classes have values: 1 - blobs, 2 - lint, 3 - tile artefacts, 4 - false positives (do not let model classify these as artefacts). All other pixels can be considered as background.
+
+#### Artefacts testset
+-Ground truth annotations have suffix 'Ant' and are in .png format. Size is 256 x 256 px. Classes correspond to pixel values: 1 - artefact (background), 2 - nuclei outlines, 3 - nuclei centers,  <br>
+-Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
+
+
+### To start at the beginning... 
+#### The ground truth annotations are in .png file extensions. The class index is in the filename: 
 -class1 - nuclei contours (outlines) <br>
 -class2 - nuclei centers on the border. For other nuclei, use an imfill operation. <br>
 -class3 - NO CLASS 3. SKIP. <br>
 -class4 - background pixels <br>
 -class5 - pixels that correspond to areas that models generally find challenging. Nuclei are more dense here. You can use these to add a higher penalty to your loss function to get higher accuracy. <br>
 <br>
-### Images are in .tif file extensions.<br>
+#### Images are in .tif file extensions
 -DAPI - corresponding to channel 1 of DAPI-stained nuclei. DAPI stains DNA in cells.<br>
 -lamin - corresonding to channel 2 of the same nuclei. Lamin stains the outer membrane in nuclei producing a ring. This is useful in challenging areas for segmentation.<br>
 -stack - OPTIONAL. This is the DAPI and lamin channels concatenated into one multipage file.<br>
