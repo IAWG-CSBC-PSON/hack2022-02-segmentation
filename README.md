@@ -51,9 +51,13 @@ The classes have values: 1 - blobs, 2 - lint, 3 - tile artefacts, 4 - false posi
 -lamin - corresonding to channel 2 of the same nuclei. Lamin stains the outer membrane in nuclei producing a ring. This is useful in challenging areas for segmentation.<br>
 -stack - OPTIONAL. This is the DAPI and lamin channels concatenated into one multipage file.<br>
 <br>
-## Suggested procedure<br>
-1. Set the artefacts folder aside. Use as test set later.<br>
-2. For remaining folders, split into training, validation, test sets of your choosing.<br>
+# Suggested procedure<br>
+1. Set the artefacts testset folder aside. Use as test set later.<br>
+2. Split the tissue trainingset into training, validation, test sets of your choosing. You may want to slice the image into smaller tiles. <br>
+3. From the artefacts trainingset, extract regions containing artefacts from the image based on the ground truth annotation.
+
+# Tips <br>
+1. use the wt files to increase penalty between nuclei in loss function. This will increase accuracy.
 
 ## Compute requirements:
 * GPU: ie 1080GTX, 3070 RTX, etc 
