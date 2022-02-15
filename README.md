@@ -38,7 +38,7 @@ The classes have values: 1 - blobs, 2 - lint, 3 - tile artefacts, 4 - false posi
 -Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
 
 
-### To start at the beginning... 
+### To start from scratch... 
 #### The ground truth annotations are in .png file extensions. The class index is in the filename: 
 -class1 - nuclei contours (outlines) <br>
 -class2 - nuclei centers on the border. For other nuclei, use an imfill operation. <br>
