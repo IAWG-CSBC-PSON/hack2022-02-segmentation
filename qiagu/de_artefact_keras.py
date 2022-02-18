@@ -33,17 +33,17 @@ def main(imagePath, outputPath):
             ch = np.zeros([256, 256], dtype=np.uint8)
             img = np.dstack([img, ch1, ch2])
 
-    predictions = model.predict(np.expand_dim(img, 0))[0]
+    predictions = model.predict(np.expand_dims(img, 0))[0]
 
-    pred_b = np.zeros_like(predictions)
-    pred_b[np.arange(len(predictions)), predictions.argmax(1)] = 1
-    pred = (pred_b[:, :, 0] == 0).astype(int)
+    pred = np.zeros((predictions.shape[0], predictions.shape[1]))
+    pred[predictions.argmax(2)==0] = 1
 
-    img_masks = io.imread('/probability_maps/%_NucleiPM_1.tif' % (iname.rsplit('.', 1)[0]))
+    img_masks = io.imread('/Users/guq/projects/hack2022-02-segmentation/probability_maps/%s_NucleiPM_1.tif' % (iname.rsplit('.', 1)[0]))
 
-    rval = np.multiply(pred, img_masks)
+    masks = np.multiply(pred, img_masks)
 
-    io.imsave( outputPath, rval,  )
+    io.imsave(outputPath, masks)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -88,4 +88,5 @@ if __name__ == '__main__':
             GPU=0
             print('Using CPU')
     os.environ['CUDA_VISIBLE_DEVICES'] = '%d' % GPU
+
     main(args.imagePath, args.outputPath)
