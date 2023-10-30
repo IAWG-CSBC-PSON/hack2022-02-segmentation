@@ -23,7 +23,7 @@ Test set: <br>
 
 ## All data are available from [Synapse](https://www.synapse.org/#!Synapse:syn26848606)  
 
-### To jump ahead and save some time, some of the data has been prepared in advance. Download this zip file [https://www.synapse.org/#!Synapse:syn27087655](https://www.synapse.org/#!Synapse:syn27087655)
+### To jump ahead and save some time, some of the data has been prepared in advance. Download this [zip file](https://github.com/IAWG-CSBC-PSON/hack2022-02-segmentation/archive/refs/tags/v1.0.zip). You can also [download the file from Synapse](https://www.synapse.org/#!Synapse:syn27087655)
 #### 1 Tissues trainingset
 -Ground truth annotations have suffix 'Ant' and are in .png format. Size is 256 x 256 px. Classes correspond to pixel values: 1 - background, 2 - nuclei outlines, 3 - nuclei centers, 4 - difficult pixels <br>
 -Images have suffix 'Img' and are in .tif format. They are 2 channels (DAPI and lamin). Size is 256 x 256 px. <br>
